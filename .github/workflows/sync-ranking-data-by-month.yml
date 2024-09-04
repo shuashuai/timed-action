@@ -6,7 +6,7 @@ on:
     - cron: "*/5 * * * *"  # 每5分钟执行一次
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   run-scripts:
