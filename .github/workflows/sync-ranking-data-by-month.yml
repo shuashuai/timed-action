@@ -43,7 +43,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         env:
-          GITHUB_TOKEN: ${{ secrets.SYNC_DATA_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: Updating data from xlab"
           title: "chore: Updating data from xlab"
           body: "Updating data from xlab, create user homepages in batches"
