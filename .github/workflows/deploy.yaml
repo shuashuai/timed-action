@@ -2,6 +2,7 @@ name: Deploy
 
 # 触发条件：每月的1号运行
 on:
+  workflow_dispatch:
   push:
     branches:
       - dev
