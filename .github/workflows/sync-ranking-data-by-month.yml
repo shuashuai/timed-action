@@ -3,11 +3,11 @@ name: Monthly Script Runner
 # 触发条件：每月的1号运行
 on:
   schedule:
-    - cron: "0 0 1 * *"  # 每月一号的00:00 UTC时间运行
+    - cron: "*/5 * * * *"  # 每月一号的00:00 UTC时间运行
   workflow_dispatch:
-  push:
-    branches:
-      - dev
+  # push:
+  #   branches:
+  #     - dev
 
 jobs:
   run-scripts:
@@ -40,12 +40,12 @@ jobs:
         run: node script/front-matter.js
 
       # 提交并推送更改
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m 'Automated data update'
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: Updating data from xlab"
-          title: "chore: Updating data from xlab"
-          body: "Updating data from xlab, create user homepages in batches"
-          branch: "chore/sync-info"
-          base: "main"

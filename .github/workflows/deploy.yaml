@@ -1,0 +1,16 @@
+name: Deploy
+
+# 触发条件：每月的1号运行
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest
+  
+    steps:
+      # 打印日志
+      - name: Print log
+        run: echo "This is a log message"
