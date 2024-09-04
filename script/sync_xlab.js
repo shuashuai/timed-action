@@ -51,7 +51,7 @@ async function main() {
     return;
   }
 
-  const yearIndex = rankingData.findIndex(v => v.year === year);
+  const yearIndex = rankingData.findIndex(v => Number(v.year) === year);
   // 获取当前时间戳
   const update = `${new Date().getFullYear()} 年 ${new Date().getMonth() + 1} 月`;
   const ranking =  {
@@ -60,7 +60,7 @@ async function main() {
     annualRanking: xlabData,
   };
 
-  if (yearIndex > 0) {
+  if (yearIndex > -1) {
     rankingData[yearIndex] = ranking;
   } else {
     // 插入新的年份数据
