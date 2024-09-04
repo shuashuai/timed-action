@@ -24,10 +24,6 @@ jobs:
         with:
           node-version: '20'  # 使用 Node.js 18
 
-      # 安装依赖
-      - name: Install dependencies
-        run: npm install
-
       # 运行第一个脚本 sync_xlab.js，从接口获取最新数据
       - name: Run sync_xlab.js
         run: node script/sync_xlab.js
