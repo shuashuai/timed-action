@@ -40,7 +40,9 @@ async function writeRankingData(data) {
 }
 
 // 主函数
-async function main(year) {
+async function main() {
+  const year = new Date().getFullYear();
+  console.log(year);
   const rankingData = await readRankingData();
   const xlabData = await fetchXlab(year);
 
@@ -71,4 +73,4 @@ async function main(year) {
   await writeRankingData(rankingData);
 }
 
-main(2024);
+main();
