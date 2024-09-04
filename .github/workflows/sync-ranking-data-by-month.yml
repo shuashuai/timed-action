@@ -5,9 +5,9 @@ on:
   schedule:
     - cron: "*/5 * * * *"  # 每月一号的00:00 UTC时间运行
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - dev
+  push:
+    branches:
+      - dev
 
 jobs:
   run-scripts:
