@@ -44,7 +44,7 @@ jobs:
           git commit -m "chore: Automated data update from scripts"
           git push origin main
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}  
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
 
       #  # 创建并推送 PR
       # - name: Create Pull Request
