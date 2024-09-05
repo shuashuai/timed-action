@@ -41,10 +41,10 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "chore: Automated data update from scripts [skip ci]"
+          git commit -m "chore: Automated data update from scripts"
           git push origin main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+          GITHUB_TOKEN: ${{ secrets.SYNC_DATA_TOKEN }}  
 
       #  # 创建并推送 PR
       # - name: Create Pull Request
