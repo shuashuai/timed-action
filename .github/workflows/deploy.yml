@@ -1,10 +1,14 @@
 name: Deploy
 
-# 触发条件：每月的1号运行
 on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Monthly Script Runner"]
+    types:
+      - completed
+
 
 jobs:
   deploy:

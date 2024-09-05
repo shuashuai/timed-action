@@ -60,7 +60,7 @@ async function main() {
     annualRanking: xlabData,
   };
 
-  if (yearIndex > -1) {
+  if (yearIndex > 0) {
     rankingData[yearIndex] = ranking;
   } else {
     // 插入新的年份数据
